@@ -8,4 +8,11 @@ const { frontmatter } = Astro.props;
 <p><em>{frontmatter.description}</em></p>
 <p>Escrito por: {frontmatter.author}</p>
 <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+
+{
+  /* 
+  1. ENLACE: Exclusivo de archivos Markdown (.md). Usan la propiedad 'layout' en su frontmatter para envolverse automáticamente (los archivos .astro no pueden hacer esto, deben importar y usar la etiqueta manualmente).
+  2. INYECCIÓN: Esta etiqueta <slot /> es obligatoria porque define el lugar exacto donde caerá todo el texto del artículo Markdown.
+*/
+}
 <slot />
